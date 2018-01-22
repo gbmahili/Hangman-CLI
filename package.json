@@ -1,0 +1,26 @@
+{
+  "name": "hangman-cli",
+  "version": "1.0.0",
+  "description": "This is a version of the Hangman game played in the command-line using node",
+  "main": "index.js",
+  "scripts": {
+    "test": "gbm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbmahili/Hangman-CLI.git"
+  },
+  "keywords": [
+    "hangman",
+    "cli"
+  ],
+  "author": "Baraka Mahili",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbmahili/Hangman-CLI/issues"
+  },
+  "homepage": "https://github.com/gbmahili/Hangman-CLI#readme",
+  "dependencies": {
+    "inquirer": "^5.0.1"
+  }
+}
