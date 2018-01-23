@@ -1,6 +1,5 @@
 var inquirer = require('inquirer');
 
-var wordToGuess = "m";
 var Word = function(dash){
     
     this.dash = dash;
