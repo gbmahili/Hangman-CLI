@@ -29,6 +29,7 @@ var Word = function(dash){
 var bob = new Word("-");
 bob.makeDashes();
 var count = 0;
+var remainingGuesses = dashedWord.length;
 
 console.log(`
 ###################################################################################
@@ -36,7 +37,7 @@ console.log(`
 ### You can't see the word. Start guessing each letter that makes up that word: ###
 ###################################################################################`);
 console.log("\n");
-console.log(dashedWord);
+console.log(`Word to guess: ${dashedWord}`);
 console.log("\n");
 var showLetter = function() {
 
@@ -70,11 +71,16 @@ var showLetter = function() {
                 dashedWord = dashedWord.replaceAt(element, letterTyped);        
             });
             // We log the dashedWord
+            remainingGuesses--;
+            console.log(`Remaining Guesses: ${remainingGuesses}`);
             console.log(dashedWord);
             // We increase our count so that we can rerun the prompt until it is no longer less than the word being worked on.
             count++;
             // We call that function so that it runs again if the count is less than the word to guess
-            showLetter();
+            if (dashedWord != wordToGuess) {
+                showLetter();
+            }
+            
         });
     }else{
         console.log(`
