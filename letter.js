@@ -7,7 +7,7 @@ var dashedWord = word.dashedWord;
 // Create a count to be used in the inquirer
 var count = 0;
 // Create the remainingGuesses which will track the number of guesses remaining for the plaer
-var remainingGuesses = dashedWord.length;
+var remainingGuesses = dashedWord.length + 5;
 
 // Let's start the game by showing hte user some instructions:
 console.log(`
@@ -71,14 +71,28 @@ var showLetter = function () {
             // We call that function so that it runs again if the count is less than the word to guess
             if (dashedWord != wordToGuess) {
                 showLetter();
+            }else{
+                console.log(`
+                ###############################################
+                -A W E S O M E, Y O U  N A I L E D  I T  B R O-
+                ### The word to guess is: '${wordToGuess}' ###
+                ###############################################`);
             }
         });
     } else {
-        console.log(`
-        ###############################################
-        ### The word to guess was: '${wordToGuess}' ###
-        ###############################################`);
-    }
+        if(remainingGuesses != 0) {
+            if (dashedWord != wordToGuess) {
+                count--;
+                showLetter();
+            }
+        } else {
+            console.log(`
+            ###############################################
+            Y O U R   G U E S S E S  A R E  O V E R  N O W!
+            ### The word to guess was: '${wordToGuess}' ###
+            ###############################################`);
+        }        
+    }        
 };
 // Let's call that function
 showLetter();
