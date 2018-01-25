@@ -91,7 +91,7 @@ var showLetter = function () {
             Y O U R   G U E S S E S  A R E  O V E R  N O W!
             ### The word to guess was: '${wordToGuess}' ###
             ###############################################`);
-        }        
+        }
     }        
 };
 // Let's call that function
