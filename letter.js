@@ -52,9 +52,19 @@ var showLetter = function () {
             indexesOfLetterTyped.forEach(element => {
                 dashedWord = dashedWord.replaceAt(element, letterTyped);
             });
-            // We log the dashedWord
-            remainingGuesses--;
-            console.log(`Remaining Guesses: ${remainingGuesses}`);
+            // Let's check if the letter guess is in the wordToGuess
+            if (wordToGuess.indexOf(letterTyped) == -1) {
+                // If not, show the word Incorrect
+                console.log("INCORRECT!");
+                // Then, reduce the remaining guesses
+                remainingGuesses--;
+                // Then show the remaining guesses
+                console.log(`Remaining Guesses: ${remainingGuesses}`);
+            }else{
+                console.log("CORRECT!");
+            }
+            // remainingGuesses--;
+            // console.log(`Remaining Guesses: ${remainingGuesses}`);
             console.log(dashedWord);
             // We increase our count so that we can rerun the prompt until it is no longer less than the word being worked on.
             count++;
